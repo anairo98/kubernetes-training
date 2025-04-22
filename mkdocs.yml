@@ -22,3 +22,6 @@ theme:
       primary: light green
       accent: teal
 
+nav:
+  - Home: index.md
+
