@@ -1,0 +1,24 @@
+site_name: My Docs
+site_url: https://trainings.com
+theme:
+  name: material
+  font:
+    text: Merriweather Sans # Google Font (Schriftart
+    code: Red Hat Mono # Google Font (Code Schriftart)
+  palette: 
+    # Palette toggle for light mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: deep purple
+      accent: cyan
+
+    # Palette toggle for dark mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: light green
+      accent: teal
+
