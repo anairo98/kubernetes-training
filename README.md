@@ -26,7 +26,7 @@ On the main page of the Online Boutique, a frontend service forwards the request
 [![Architecture of
 microservices](/img/architecture-diagram.png)](/img/architecture-diagram.png)
 
-All these 11 microservices are communicating over gRPC protocol. 
+Microservices are communicating over gRPC protocol. Besides, *cartservice* stores its data in a *redis-cache*, which will be deployed as another microservice. 
 
 ### Microservices
 These 11 microservices are written in different programming languages and are responsible for a specific task in this e-commerce website:
