@@ -14,5 +14,6 @@ This guide is designed to help you get started with Kubernetes, the powerful ope
 These Github pages are based on the DevOps idea and are thereby constantly being developed and changed. This means that incomplete information or explanations and exercises that have not yet been fully described cannot be ruled out.
 
 ## Authors
-Oriana Schwickrath - Oriana.Schwickrath@computacenter.com
-Mohammad Bahmani - Mohammad.Bahmani@computacenter.com
+
+Oriana Schwickrath - (E-Mail contact)[Oriana.Schwickrath@computacenter.com]
+Mohammad Bahmani - (E-Mail contact)[Mohammad.Bahmani@computacenter.com]
