@@ -66,12 +66,12 @@ podman push <image-name>:<tag> <registry-url>/<repository>/<image-name>:<tag>
     ```bash
     minikube image load <image-name>:<tag>
     ```
-3. Load the image into Minikube:
+3. Deploy the image as single pod on Minikube:
     ```bash
-    minikube image load <image-name>:<tag>
+    kubectl run <pod-name> --image=<image-name>:<tag> --expose --port 8080
     ```
 
-4. Create a Kubernetes deployment:
+<!-- 4. Create a Kubernetes deployment:
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
@@ -96,12 +96,12 @@ podman push <image-name>:<tag> <registry-url>/<repository>/<image-name>:<tag>
     Save this YAML to a file (e.g., `deployment.yaml`) and apply it:
     ```bash
     kubectl apply -f deployment.yaml
-    ```
-5. Expose the deployment as a service:
+    ``` -->
+4. Expose the deployment as a service:
     ```bash
-    kubectl expose deployment webapp --type=NodePort --port=80
+    kubectl expose pod <pod-name> --type=NodePort --port=8080
     ```
-6. Access the service:
+5. Access the service:
     ```bash
     minikube service webapp
     ```
