@@ -2,4 +2,5 @@
 FROM nginxinc/nginx-unprivileged:stable-alpine
 
 # Copy your static site content into the NGINX web root
-COPY ./html /usr/share/nginx/html
+# COPY ./html /usr/share/nginx/html
+COPY ./html/index.html /usr/share/nginx/html/index.html
