@@ -1,16 +1,18 @@
-# Welcome to MkDocs
+# Welcome to the world of Kubernetes
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This guide is designed to help you get started with Kubernetes, the powerful open-source platform for automating microservice deployments, scaling, and management of containerized applications. Whether you're new to Kubernetes or looking to solidify your foundational knowledge, this training will provide you with the basic concepts and hands-on experience needed to start to utilize Kubernetes effectively.
 
-## Commands
+## Workshop Structure
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
+1. Some fundamental concepts
+2. Prerequisites
+3. Work on your Cluster
+4. Deploy ypur first Microservice Application on OpenShift
 
-## Project layout
+## Disclaimer
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+These Github pages are based on the DevOps idea and are thereby constantly being developed and changed. This means that incomplete information or explanations and exercises that have not yet been fully described cannot be ruled out.
+
+## Authors
+Oriana Schwickrath - Oriana.Schwickrath@computacenter.com
+Mohammad Bahmani - Mohammad.Bahmani@computacenter.com
