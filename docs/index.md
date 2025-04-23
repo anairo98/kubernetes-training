@@ -6,8 +6,9 @@ This guide is designed to help you get started with Kubernetes, the powerful ope
 
 1. Some fundamental concepts
 2. Prerequisites
+3. podman/ Docker 
 3. Work on your Cluster
-4. Deploy ypur first Microservice Application on OpenShift
+4. Deploy ypur first Microservice Application on Red Hat OpenShift
 
 ## Disclaimer
 

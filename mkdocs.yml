@@ -25,3 +25,6 @@ theme:
 nav:
   - Home: index.md
 
+theme:
+  logo: Kubernetes-logo.png
+
