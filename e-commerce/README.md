@@ -44,6 +44,25 @@ Ensure that you have access to a **OpenShift Cluster** to deploy the manifests f
 ### Tutorial Instructions
 We will deploy step by step the manifests in this directory from the OpenShift Console.
 
+Login to OpenShift using provided user and Password:
+
+
+and create a new ***project*** with your provided user: 
+
+<a href="../img/ocp_create_project_1.png">
+  <img src="../img/ocp_create_project_1.png" alt="ocp_create_project_1" width="300"/>
+</a>         
+
+<a href="../img/ocp_create_project_2.png">
+  <img src="../img/ocp_create_project_2.png" alt="ocp_create_project_2" width="300"/>
+</a>
+
+<!-- [![ocp_create_project_1](/img/ocp_create_project_1.png)](/img/ocp_create_project_1.png)
+[![ocp_create_project_2](/img/ocp_create_project_2.png)](/img/ocp_create_project_2.png) -->
+
+
+Go to
+
 1. First deploy *frontend*, 
    ```bash
    kubectl apply -f frontend.yaml
