@@ -114,8 +114,8 @@ docker tag <YOURNAME_image-name>:<YOURNAME> <DOCKERHUB-USERNAME>/<REPOSITORYNAME
 docker push <DOCKERHUB-USERNAME>/<REPOSITORYNAME>:<YOURNAME>
 ```
 > The repository names: <REPOSITORYNAME> are the following:
-    - For the *"static_joke_webpage"*: **static-joke**
-    - For the *"image_accept_webpage"*: **image-repository** 
+- For the *"static_joke_webpage"*: **static-joke**
+- For the *"image_accept_webpage"*: **image-repository** 
 
 #### 4. Deploy the Image Locally Using Minikube
 1. Start Minikube:
