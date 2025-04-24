@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Appreciation Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding: 30px 10px;
+    }
+
+    input, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    #preview {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      margin-top: 30px;
+    }
+
+    #uploadedImage {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: none;
+    }
+
+    #message {
+      font-size: 1.2em;
+      margin-top: 15px;
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Share Your Image!</h1>
+
+  <form id="imageForm">
+    <p><strong>Option 1:</strong> Upload an image</p>
+    <input type="file" id="imageInput" accept="image/*"><br>
+
+    <p><strong>Option 2:</strong> Enter image URL</p>
+    <input type="url" id="imageURL" placeholder="https://example.com/image.jpg"><br>
+
+    <input type="text" id="imageContent" placeholder="What's in the image?" required><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="preview">
+    <img id="uploadedImage">
+    <p id="message"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('imageForm');
+    const imageInput = document.getElementById('imageInput');
+    const imageURL = document.getElementById('imageURL');
+    const imageContent = document.getElementById('imageContent');
+    const uploadedImage = document.getElementById('uploadedImage');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const file = imageInput.files[0];
+      const url = imageURL.value.trim();
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          showImage(event.target.result, imageContent.value);
+        };
+        reader.readAsDataURL(file);
+      } else if (url) {
+        showImage(url, imageContent.value);
+      } else {
+        alert('Please upload an image or provide a valid image URL.');
+      }
+    });
+
+    function showImage(src, content) {
+      uploadedImage.src = src;
+      uploadedImage.style.display = 'block';
+      message.textContent = `Thank you! It is a nice image of ${content}!`;
+    }
+  </script>
+
+</body>
+</html>
