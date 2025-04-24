@@ -53,6 +53,7 @@ and create a new ***project*** with your provided user:
   <img src="../img/ocp_create_project_1.png" alt="ocp_create_project_1" width="300"/>
 </a>         
 
+
 <a href="../img/ocp_create_project_2.png">
   <img src="../img/ocp_create_project_2.png" alt="ocp_create_project_2" width="300"/>
 </a>
