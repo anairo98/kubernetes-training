@@ -20,13 +20,18 @@ webapp_container_image/
 
 ### Prerequisites
 Ensure you have the following tools installed and configured:
-- **Podman** or **Docker**: For building, running, and pushing container images.
+- **Podman** / **Docker**: For building, running, and pushing container images.
 - **Minikube**: As a local light weight kubernetes cluster for deploying the container images.
 
 Instruction to install **Podman** or **Docker** and **Minikube** on different operating systems can be find in their official documentation:
+
 [Podman Installation Instructions](https://podman.io/docs/installation)
+
 [Install Docker Engine](https://docs.docker.com/engine/install/)
+
 [minikube start](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download)
+
+--->>> ***Set Alias*** <<<---
 
 Do not forget to add set the alias for ***minikube kubectl*** as:
 ```bash
@@ -34,11 +39,10 @@ alias kubectl="minikube kubectl --"
 ```
 Otherwise, you should type the whole *"minikube kubectl"* every time you want to see resources on minikube.
 
-
-
+--->>> ***Set Alias*** <<<---
 
 ### Steps
-Go to the corresponding directory start building and deploying the images with podman.
+Go to the corresponding directory start building and deploying the images with *podman* or *docker*.
 
 **First** --> *"static_joke_webpage"* 
 
@@ -46,7 +50,7 @@ Go to the corresponding directory start building and deploying the images with p
 
 For each of the above application, go thorough these steps:
 
-#### 1. Build the Image with Podman
+#### 1. Build the Image with Podman/Docker
 
 Run the following command in the directory containing your Containerfile:
 ```bash
@@ -55,7 +59,7 @@ docker build -f ./Containerfile -t <YOURNAME_image-name>:<tag> .
 ```
 Replace `<YOURNAME_image-name>` and `<tag>` with your desired image name and tag.
 
-#### 2. Run the Image with Podman
+#### 2. Run the Image with Podman/Docker
 To test the image locally, use:
 ```bash
 podman run -d -p 8080:8080 <YOURNAME_image-name>:<tag>
