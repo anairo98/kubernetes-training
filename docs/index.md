@@ -16,5 +16,5 @@ These Github pages are based on the DevOps idea and are thereby constantly being
 
 ## Authors
 
-Oriana Schwickrath - (E-Mail contact)[Oriana.Schwickrath@computacenter.com]
-Mohammad Bahmani - (E-Mail contact)[Mohammad.Bahmani@computacenter.com]
+Oriana Schwickrath - [E-Mail contact](Oriana.Schwickrath@computacenter.com)
+Mohammad Bahmani - [E-Mail contact](Mohammad.Bahmani@computacenter.com)
