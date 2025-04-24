@@ -61,8 +61,55 @@ and create a new ***project*** with your provided user:
 <!-- [![ocp_create_project_1](/img/ocp_create_project_1.png)](/img/ocp_create_project_1.png)
 [![ocp_create_project_2](/img/ocp_create_project_2.png)](/img/ocp_create_project_2.png) -->
 
+#### Frontend Deployment
 
-Go to
+Now, we will add *frontend* resources by going to the ***+Add*** page:
+
+[![ocp_add](/img/ocp_add.png)](/img/ocp_add.png)
+
+and import the corresponding yaml files, that we cloned from the repository earlier, in ***Import YAML***:
+
+[![ocp_add](/img/ocp_add_import_yaml.png)](/img/ocp_add_import_yaml.png)
+
+In ***Import YAML***, make sure that you are in the right project (i.e. **userx**) and then click on ***Create***:
+
+[![ocp_add](/img/ocp_imported_yaml.png)](/img/ocp_imported_yaml.png)
+
+After some seconds or minutes, it shows that the resources for *frontend* service are successfully deployed:
+
+[![ocp_add](/img/ocp_successful_deployment.png)](/img/ocp_successful_deployment.png)
+
+Now, we go to ***Topology*** page and click on the arrow at the top right corner to open up the web application in a browser:
+
+[![ocp_add](/img/ocp_frontend_ui.png)](/img/ocp_frontend_ui.png)
+
+Wait a moment! We did everything correct but still there is an *Error* and the website is not properly loaded:
+
+[![ocp_add](/img/ocp_frontend_ui_error.png)](/img/ocp_frontend_ui_error.png)
+
+That is because *frontend* is only the shell of this microservice application and all the backend services are not deployed yet! 
+
+#### Deploy Backend Services
+At this stage, we will follow the steps described before to add resources for these backend services
+- adservice.yaml
+- cartservice
+- checkoutservice.yaml
+- currencyservice.yaml
+- loadgenerator.yaml
+- productionservice.yaml
+- recommendationservice.yaml
+- shippingservice.yaml
+
+by importing *YAML* files from the cloned repo into the same *project* (i.e. **userx**) on the cluster and wait some minutes for them to be successfully deployed.
+
+YUHU! All part of the puzzle are in running state!
+
+[![ocp_add](/img/happy_female.jpg)](/img/happy_female.jpg)
+
+Everything Why doesn't the recommendations and Advertisement
+
+[![ocp_add](/img/frustrated_female.jpg)](/img/frustrated_female.jpg)
+
 
 1. First deploy *frontend*, 
    ```bash
