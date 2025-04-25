@@ -13,41 +13,14 @@
 
     minikube ssh -- docker images
     ```
-    
+
 3. Deploy the image as single pod on Minikube:
 
     ```bash
     kubectl run <pod-name> --image=<YOURNAME_image-name>:<tag> --port 8080
     ```
 
-<!-- 4. Create a Kubernetes deployment:
-    ```yaml
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: webapp
-    spec:
-      replicas: 1
-      selector:
-         matchLabels:
-            app: webapp
-      template:
-         metadata:
-            labels:
-              app: webapp
-         spec:
-            containers:
-            - name: webapp
-              image: <YOURNAME_image-name>:<tag>
-              ports:
-              - containerPort: 8080
-    ```
-    Save this YAML to a file (e.g., `deployment.yaml`) and apply it:
-    ```bash
-    kubectl apply -f deployment.yaml
-    ``` -->
-
-4. At this point, we have two ways to access the webpage:
+4. At this point, we have two ways to access the webpage (a and b):
 
     1. We can create a service with type **"ClusterIP"**:
 
@@ -89,4 +62,4 @@
         URL = http://<minikube-node-ip>:<nodeport>
         ```
         
-> Replace placeholders with your actual values as needed.
+> Replace placeholders with your actual values as needed

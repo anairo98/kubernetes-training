@@ -32,11 +32,10 @@ nav:
   - "Orchestration": 
     - orchestration.md
     - "Second Hands-On Lab": kubernetes-core/second-lab.md
-  #   - "Minikube": 
-  #   - "Second Hands-On Lab":
-  # - "Enterprise Solutions":
-  #   - "Red Hat OpenShift": 
-  #   - "Third Hands-On Lab": 
+  - "Enterprise Solutions":
+    - enterprise-solutions.md
+    - "Third Hands-On Lab": kubernetes-core/third-lab.md
+
 
 
 
