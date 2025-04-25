@@ -1,4 +1,5 @@
 ## Webapp in Container
+
 This tutorial provides step-by-step instructions for containerizing a web application, building its container image, and deploying it to a local Kubernetes cluster using Minikube. By following this guide, you will learn how to use Podman for container image management and Kubernetes for application deployment.
 
 ### Directory Structure
@@ -19,7 +20,9 @@ webapp_container_image/
 ```
 
 ### Prerequisites
+
 Ensure you have the following tools installed and configured:
+
 - **Podman** or **Docker**: For building, running, and pushing container images
 - **Minikube**: As a local light weight kubernetes cluster for deploying the container images (builds up a cluster on a single node)
 
@@ -34,9 +37,11 @@ Instruction to install **Podman** or **Docker** and **Minikube** on different op
 --->>> ***Set Alias*** <<<---
 
 Do not forget to set the alias for the ***minikube kubectl*** command in the **~/.bashrc** as:
+
 ```bash
 alias kubectl="minikube kubectl --"
 ```
+
 Otherwise, you should type the whole *"minikube kubectl"* every time you want to see resources on minikube.
 
 --->>> ***Set Alias*** <<<---
@@ -63,6 +68,7 @@ podman build -t <YOURNAME_image-name>:<YOURNMAE> .
 
 docker build -f ./Containerfile -t <YOURNAME_image-name>:<YOURNAME> .
 ```
+
 Replace `<YOURNAME_image-name>` and `<tag>` with your desired image name and tag.
 
 > Validate if the image was build up:
@@ -77,12 +83,14 @@ docker images
 #### 2. Run the Image with Podman/Docker (Create a Container)
 
 To test the image locally, use:
+
 ```bash
 podman run -d -p 8080:8080 <YOURNAME_image-name>:<tag>
 
 # If you use docker instead:
 docker run -d -p 8080:8080 <YOURNAME_image-name>:<tag>
 ```
+
 This maps port 8080 (first port number) on your host to port 8080 (second port number) in the container. You can set an arbitrary port for the host, but container port **MUST** be 8080.
 
 > Validate if the container is running:
@@ -97,15 +105,18 @@ docker ps
 #### 3. Push the Image to a Registry
 
 - Log in to your container registry (e.g., Docker Hub, Quay.io). It will ask you for your password:
+
 ```bash
 podman login <registry-url> -u <username> 
 
 # If you use docker instead: 
 docker login <registry-url> -u <username> 
 ```
+
 > The <registry-url> is in the case of the *Kubernetes Basic Training* **docker.io** registry
 
 - Then push the image you just built:
+
 ```bash
 podman push <YOURNAME_image-name>:<tag> <registry-url>/<repository>/<YOURNAME_image-name>:<tag>
 
@@ -113,81 +124,11 @@ podman push <YOURNAME_image-name>:<tag> <registry-url>/<repository>/<YOURNAME_im
 docker tag <YOURNAME_image-name>:<YOURNAME> <DOCKERHUB-USERNAME>/<REPOSITORYNAME>:<YOURNAME>
 docker push <DOCKERHUB-USERNAME>/<REPOSITORYNAME>:<YOURNAME>
 ```
+
 > The repository names: <REPOSITORYNAME> are the following:
+
 - For the *"static_joke_webpage"*: **static-joke**
 - For the *"image_accept_webpage"*: **image-repository** 
 
-#### 4. Deploy the Image Locally Using Minikube
-1. Start Minikube:
-    ```bash
-    minikube start
-    ```
-2. Load the image into Minikube and make sure that is correctly loaded:
-    ```bash
-    minikube image load <YOURNAME_image-name>:<tag>
-    minikube ssh -- docker images
-    ```
-3. Deploy the image as single pod on Minikube:
-    ```bash
-    kubectl run <pod-name> --image=<YOURNAME_image-name>:<tag> --port 8080
-    ```
-
-<!-- 4. Create a Kubernetes deployment:
-    ```yaml
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: webapp
-    spec:
-      replicas: 1
-      selector:
-         matchLabels:
-            app: webapp
-      template:
-         metadata:
-            labels:
-              app: webapp
-         spec:
-            containers:
-            - name: webapp
-              image: <YOURNAME_image-name>:<tag>
-              ports:
-              - containerPort: 8080
-    ```
-    Save this YAML to a file (e.g., `deployment.yaml`) and apply it:
-    ```bash
-    kubectl apply -f deployment.yaml
-    ``` -->
-
-4. At this point, we have two ways to access the webpage:
-
-    1. We can create a service with type **"ClusterIP"**:
-        ```bash
-        kubectl expose pod <pod-name> --type=ClusterIP --port=8080 --name <service-name>
-        ```
-        and then use minikube native load balancer to open a tunnel to the serice:
-        ```bash
-        minikube service <service-name>
-        ```
-
-    2. The second method uses the service type **"NodePort"**:
-        ```bash
-        kubectl expose pod <pod-name> --type=NodePort --port=8080 --name <service-name>
-        ```
-        and the ip address of the minikube's node, which can be obtained from this command:
-        ```bash
-        minikube node list
-        ```
-        to access the webpage. For that we need the **"nodePort"** assigned to the service we just created:
-        ```bash
-        kubectl get service
-        ```
-        as shown in this image, look for a port number that starts with ***30...***:
-        [![nodeport](/img/nodeport.png)](/img/nodeport.png)
         
-        In the browser go the *URL* that is built from *minikube-node-ip* and *nodeport* to see the webpage:
-        ```bash
-        URL = http://<minikube-node-ip>:<nodeport>
-        ```
-        
-Replace placeholders with your actual values as needed.
+> Replace placeholders with your actual values as needed.
