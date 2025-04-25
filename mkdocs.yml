@@ -27,14 +27,13 @@ theme:
 nav:
   - "Home": index.md
   - "Basics": kubernetes-basics.md
-    - "Docker/ Podman": 
-    - "First Hands-On Lab": 
-  - "Orchestration":
-    - "Minikube":
-    - "Second Hands-On Lab":
-  - "Enterprise Solutions":
-    - "Red Hat OpenShift": 
-    - "Third Hands-On Lab": 
+  #   - "First Hands-On Lab": 
+  # - "Orchestration":
+  #   - "Minikube": 
+  #   - "Second Hands-On Lab":
+  # - "Enterprise Solutions":
+  #   - "Red Hat OpenShift": 
+  #   - "Third Hands-On Lab": 
 
 
 
