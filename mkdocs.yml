@@ -1,7 +1,9 @@
 site_name: My Docs
+copyright: Copyright &copy; Oriana Schwickrath 2025
 site_url: https://trainings.com
 theme:
   name: material
+  favicon: assets/images/Kubernetes_logo.png
   font:
     text: Merriweather Sans # Google Font (Schriftart
     code: Red Hat Mono # Google Font (Code Schriftart)
@@ -23,7 +25,16 @@ theme:
       accent: teal
 
 nav:
-  - Home: index.md
+  - "Home": index.md
+  - "Basics": kubernetes-basics.md
+    - "Docker/ Podman": 
+    - "First Hands-On Lab": 
+  - "Orchestration":
+    - "Minikube":
+    - "Second Hands-On Lab":
+  - "Enterprise Solutions":
+    - "Red Hat OpenShift": 
+    - "Third Hands-On Lab": 
 
-copyright: Copyright &copy; Oriana Schwickrath & Mohammad Bahmani 2025
+
 
