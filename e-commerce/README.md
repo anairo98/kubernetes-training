@@ -53,6 +53,7 @@ and create a new ***project*** with your provided user:
   <img src="../img/ocp_create_project_1.png" alt="ocp_create_project_1" width="300"/>
 </a>         
 
+
 <a href="../img/ocp_create_project_2.png">
   <img src="../img/ocp_create_project_2.png" alt="ocp_create_project_2" width="300"/>
 </a>
@@ -60,10 +61,80 @@ and create a new ***project*** with your provided user:
 <!-- [![ocp_create_project_1](/img/ocp_create_project_1.png)](/img/ocp_create_project_1.png)
 [![ocp_create_project_2](/img/ocp_create_project_2.png)](/img/ocp_create_project_2.png) -->
 
+#### Frontend Deployment
 
-Go to
+Now, we will add *frontend* resources by going to the ***+Add*** page:
 
-1. First deploy *frontend*, 
+[![ocp_add](/img/ocp_add.png)](/img/ocp_add.png)
+
+and import the corresponding yaml files, that we cloned from the repository earlier, in ***Import YAML***:
+
+[![ocp_add](/img/ocp_add_import_yaml.png)](/img/ocp_add_import_yaml.png)
+
+In ***Import YAML***, make sure that you are in the right project (i.e. **userx**) and then click on ***Create***:
+
+[![ocp_add](/img/ocp_imported_yaml.png)](/img/ocp_imported_yaml.png)
+
+After some seconds or minutes, it shows that the resources for *frontend* service are successfully deployed:
+
+[![ocp_add](/img/ocp_successful_deployment.png)](/img/ocp_successful_deployment.png)
+
+Now, we go to ***Topology*** page and click on the arrow at the top right corner to open up the web application in a browser:
+
+[![ocp_add](/img/ocp_frontend_ui.png)](/img/ocp_frontend_ui.png)
+
+Wait a moment! We did everything correct but still there is an *Error* and the website is not properly loaded:
+
+[![ocp_add](/img/ocp_frontend_ui_error.png)](/img/ocp_frontend_ui_error.png)
+
+That is because *frontend* is only the shell of this microservice application and all the backend services are not deployed yet! 
+
+#### Deploy Backend Services
+At this stage, we will follow the steps described before to add resources for these backend services
+- adservice.yaml
+- cartservice
+- checkoutservice.yaml
+- currencyservice.yaml
+- loadgenerator.yaml
+- productionservice.yaml
+- recommendationservice.yaml
+- shippingservice.yaml
+
+by importing *YAML* files from the cloned repo into the same *project* (i.e. **userx**) on the cluster and wait some minutes for them to be successfully deployed.
+
+YUHU! All part of the puzzle are in running state! **But someting is not right!**
+Why are the *recommendations* and *Advertisement* not shown!
+
+***Please compare the website with the link you recieve during the workshop!***
+
+***Tipp: Look into the ports configured in the frontend deployment!***
+
+After troubleshooting and connecting properly the *recommendations* and *Advertisement* services, we go further with add two more services to the application: *payment* & *email*
+
+#### Deploy Services *Payment* and *Email* from Terminal
+
+In orther to open up a terminal, click on the *"icon"* at top right corner of the console, as shown in the image:
+[![ocp_add](/img/ocp_web_terminal_1.png)](/img/ocp_web_terminal_1.png)
+
+Then start a terminal in the window that pops up at the bottom of the page:
+[![ocp_add](/img/ocp_web_terminal_2.png)](/img/ocp_web_terminal_2.png)
+
+That should start a workspace pod in your project and provide you with a shell. 
+
+First, we clone the repository[kubernetes-training](https://github.com/anairo98/kubernetes-training.git):
+[![ocp_add](/img/ocp_web_terminal_3.png)](/img/ocp_web_terminal_3.png)
+
+Go to the *"kubernetes-training/e-commerce"* directory and run below commands:
+
+1. deploy *email* service, 
    ```bash
-   kubectl apply -f frontend.yaml
+   kubectl apply -f emailservice.yaml
    ```
+
+2. Deploy *payment* service: 
+   ```bash
+   kubectl apply -f paymentservice.yaml
+   ```
+
+
+Now, it is time to make some money from our website! :smile: :money_with_wings:
