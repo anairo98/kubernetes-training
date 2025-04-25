@@ -5,6 +5,7 @@
     ```bash
     minikube start
     ```
+
 2. Load the image into Minikube and make sure that is correctly loaded:
 
     ```bash
@@ -12,6 +13,7 @@
 
     minikube ssh -- docker images
     ```
+    
 3. Deploy the image as single pod on Minikube:
 
     ```bash
