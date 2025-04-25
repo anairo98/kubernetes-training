@@ -26,8 +26,9 @@ theme:
 
 nav:
   - "Home": index.md
-  - "Basics": kubernetes-basics.md
-  #   - "First Hands-On Lab": 
+  - "Basics": 
+    - kubernetes-basics.md
+    - "First Hands-On Lab": kubernetes-core/first-lab.md
   # - "Orchestration":
   #   - "Minikube": 
   #   - "Second Hands-On Lab":

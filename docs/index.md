@@ -24,8 +24,6 @@ and another one, which show you how to deploy an e-commerce application with mic
 
 [Microservice Appplication - e-commerce](./e-commerce/README.md)
 
-## License
-This repository is licensed under the [Apache License](LICENSE).
 
 ## Disclaimer
 These Github pages are based on the DevOps idea and are thereby constantly being developed and changed. This means that incomplete information or explanations and exercises that have not yet been fully described cannot be ruled out.
