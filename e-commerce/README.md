@@ -102,16 +102,39 @@ At this stage, we will follow the steps described before to add resources for th
 
 by importing *YAML* files from the cloned repo into the same *project* (i.e. **userx**) on the cluster and wait some minutes for them to be successfully deployed.
 
-YUHU! All part of the puzzle are in running state!
+YUHU! All part of the puzzle are in running state! **But someting is not right!**
+Why are the *recommendations* and *Advertisement* not shown!
 
-[![ocp_add](/img/happy_female.jpg)](/img/happy_female.jpg)
+***Please compare the website with the link you recieve during the workshop!***
 
-Everything Why doesn't the recommendations and Advertisement
+***Tipp: Look into the ports configured in the frontend deployment!***
 
-[![ocp_add](/img/frustrated_female.jpg)](/img/frustrated_female.jpg)
+After troubleshooting and connecting properly the *recommendations* and *Advertisement* services, we go further with add two more services to the application: *payment* & *email*
 
+#### Deploy Services *Payment* and *Email* from Terminal
 
-1. First deploy *frontend*, 
+In orther to open up a terminal, click on the *"icon"* at top right corner of the console, as shown in the image:
+[![ocp_add](/img/ocp_web_terminal_1.png)](/img/ocp_web_terminal_1.png)
+
+Then start a terminal in the window that pops up at the bottom of the page:
+[![ocp_add](/img/ocp_web_terminal_2.png)](/img/ocp_web_terminal_2.png)
+
+That should start a workspace pod in your project and provide you with a shell. 
+
+First, we clone the repository[kubernetes-training](https://github.com/anairo98/kubernetes-training.git):
+[![ocp_add](/img/ocp_web_terminal_3.png)](/img/ocp_web_terminal_3.png)
+
+Go to the *"kubernetes-training/e-commerce"* directory and run below commands:
+
+1. deploy *email* service, 
    ```bash
-   kubectl apply -f frontend.yaml
+   kubectl apply -f emailservice.yaml
    ```
+
+2. Deploy *payment* service: 
+   ```bash
+   kubectl apply -f paymentservice.yaml
+   ```
+
+
+Now, it is time to make some money from our website! :smile: :money_with_wings:
