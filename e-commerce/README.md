@@ -76,14 +76,23 @@ Wait a moment! We did everything correct but still there is an *Error* and the w
 That is because *frontend* is only the shell of this microservice application and all the backend services are not deployed yet! 
 
 #### Deploy Backend Services
-At this stage, we will follow the steps described before to add resources for these backend services
+
+At this stage, we will follow the steps described before to add resources for these backend services:
+
 - adservice.yaml
+
 - cartservice
+
 - checkoutservice.yaml
+
 - currencyservice.yaml
+
 - loadgenerator.yaml
+
 - productionservice.yaml
+
 - recommendationservice.yaml
+
 - shippingservice.yaml
 
 by importing *YAML* files from the cloned repo into the same *project* (i.e. **userx**) on the cluster and wait some minutes for them to be successfully deployed.
@@ -113,12 +122,12 @@ First, we clone the repository[kubernetes-training](https://github.com/anairo98/
 Go to the *"kubernetes-training/e-commerce"* directory and run below commands:
 
 1. deploy *email* service, 
-   ```bash
+   ```
    kubectl apply -f emailservice.yaml
    ```
 
 2. Deploy *payment* service: 
-   ```bash
+   ```
    kubectl apply -f paymentservice.yaml
    ```
 
