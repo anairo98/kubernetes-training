@@ -2,7 +2,7 @@
 
 1. Start Minikube:
 
-    ```bash
+    ``` bash
     minikube start
     ```
 

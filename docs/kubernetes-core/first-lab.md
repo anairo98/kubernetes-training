@@ -77,6 +77,7 @@ Replace `<YOURNAME_image-name>` and `<tag>` with your desired image name and tag
 podman images
 
 # If you use docker instead:
+
 docker images
 ```
 
@@ -99,6 +100,7 @@ This maps port 8080 (first port number) on your host to port 8080 (second port n
 podman ps
 
 # If you use docker instead:
+
 docker ps
 ```
 
@@ -110,6 +112,7 @@ docker ps
 podman login <registry-url> -u <username> 
 
 # If you use docker instead: 
+
 docker login <registry-url> -u <username> 
 ```
 
@@ -118,10 +121,16 @@ docker login <registry-url> -u <username>
 - Then push the image you just built:
 
 ```bash
-podman push <YOURNAME_image-name>:<tag> <registry-url>/<repository>/<YOURNAME_image-name>:<tag>
+# Push image to Docker Hub into an separate repository just for the newly build image:
+podman push <YOURNAME_image-name>:<tag> <registry-url>/<REGISTRY-USERNAME>/<YOURNAME_image-name>:<tag>
 
-# If you use docker instead:
-docker tag <YOURNAME_image-name>:<YOURNAME> <DOCKERHUB-USERNAME>/<REPOSITORYNAME>:<YOURNAME>
+# If you use docker instead and want to push image to Docker Hub into an separate repository just for the newly build image:
+
+docker push <registry-url>/<REGISTRY-USERNAME>/<YOURNAME_image-name>:<tag>
+
+# If you use docker instead and want to push the image into an existing Repository in your Docker Hub:
+
+docker tag <YOURNAME_image-name>:<YOURNAME> <REGISTRY.USERNAME>/<REPOSITORYNAME>:<YOURNAME>
 docker push <DOCKERHUB-USERNAME>/<REPOSITORYNAME>:<YOURNAME>
 ```
 

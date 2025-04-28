@@ -121,12 +121,14 @@ First, we clone the repository[kubernetes-training](https://github.com/anairo98/
 
 Go to the *"kubernetes-training/e-commerce"* directory and run below commands:
 
-1. deploy *email* service, 
+1. deploy *email* service:
+
    ```
    kubectl apply -f emailservice.yaml
    ```
 
 2. Deploy *payment* service: 
+
    ```
    kubectl apply -f paymentservice.yaml
    ```
