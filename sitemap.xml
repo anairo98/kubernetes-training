@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://trainings.com/</loc>
+         <lastmod>2025-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://trainings.com/enterprise-solutions/</loc>
+         <lastmod>2025-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://trainings.com/kubernetes-basics/</loc>
+         <lastmod>2025-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://trainings.com/orchestration/</loc>
+         <lastmod>2025-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://trainings.com/kubernetes-core/first-lab/</loc>
+         <lastmod>2025-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://trainings.com/kubernetes-core/second-lab/</loc>
+         <lastmod>2025-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://trainings.com/kubernetes-core/third-lab/</loc>
+         <lastmod>2025-04-28</lastmod>
+    </url>
+</urlset>
