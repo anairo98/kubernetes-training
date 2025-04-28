@@ -28,13 +28,13 @@ theme:
 
 nav:
   - "Home": index.md
-  - "Basics": 
+  - "1. Container Basics": 
     - kubernetes-basics.md
     - "First Hands-On Lab": kubernetes-core/first-lab.md
-  - "Orchestration": 
+  - "2. Kubernetes": 
     - orchestration.md
     - "Second Hands-On Lab": kubernetes-core/second-lab.md
-  - "Enterprise Solutions":
+  - "3. Enterprise Solutions":
     - enterprise-solutions.md
     - "Third Hands-On Lab": kubernetes-core/third-lab.md
 

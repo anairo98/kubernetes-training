@@ -121,10 +121,10 @@ docker login <registry-url> -u <username>
 - Then push the image you just built:
 
 ```bash
-# Push image to Docker Hub into an separate repository just for the newly build image:
+# Push image to Docker Hub into an separate repository, just for the newly build image:
 podman push <YOURNAME_image-name>:<tag> <registry-url>/<REGISTRY-USERNAME>/<YOURNAME_image-name>:<tag>
 
-# If you use docker instead and want to push image to Docker Hub into an separate repository just for the newly build image:
+# If you use docker instead and want to push image to Docker Hub into an separate repository, just for the newly build image:
 
 docker push <registry-url>/<REGISTRY-USERNAME>/<YOURNAME_image-name>:<tag>
 

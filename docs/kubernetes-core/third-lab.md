@@ -48,40 +48,41 @@ Login to OpenShift cluster using the provided credentials, create a new ***proje
 
 Now, we will add *frontend* resources by going to the ***+Add*** page:
 
-![ocp_add](imgages/ocp_add.png)
+![ocp_add](images/ocp_add.png)
 
 and import the corresponding yaml files, that we cloned from the repository earlier, in ***Import YAML***:
 
-![ocp_add](images/ocp_add_import_yaml.png)
+![ocp_add_import_yaml](images/ocp_add_import_yaml.png)
 
 In ***Import YAML***, make sure that you are in the right project (i.e. **userx**) and then click on ***Create***:
 
-![ocp_add](images/ocp_imported_yaml.png)
+![ocp_imported_yaml](images/ocp_imported_yaml.png)
 
 After some seconds or minutes, it shows that the resources for *frontend* service are successfully deployed:
 
-![ocp_add](images/ocp_successful_deployment.png)
+![ocp_successful_deploy](images/ocp_successful_deployment.png)
 
 Now, we go to ***Topology*** page and click on the arrow at the top right corner to open up the web application in a browser:
 
-![ocp_add](images/ocp_frontend_ui.png)
+![ocp_frontend_ui](images/ocp_frontend_ui.png)
 
 Wait a moment! We did everything correct but still there is an *Error* and the website is not properly loaded:
 
-![ocp_add](images/ocp_frontend_ui_error.png)
+![ocp_frontend_ui_error](images/ocp_frontend_ui_error.png)
 
 That is because *frontend* is only the shell of this microservice application and all the backend services are not deployed yet! 
 
 #### Deploy Backend Services
 At this stage, we will follow the steps described before to add resources for these backend services
-- adservice.yaml
-- cartservice
-- checkoutservice.yaml
-- currencyservice.yaml
-- loadgenerator.yaml
-- productionservice.yaml
-- recommendationservice.yaml
-- shippingservice.yaml
+
+* adservice.yaml
+* cartservice
+* checkoutservice.yaml
+* currencyservice.yaml
+* loadgenerator.yaml
+* productionservice.yaml
+* recommendationservice.yaml
+* shippingservice.yaml
 
 by importing *YAML* files from the cloned repo into the same *project* (i.e. **userx**) on the cluster and wait some minutes for them to be successfully deployed.
 
@@ -97,16 +98,16 @@ After troubleshooting and connecting properly the *recommendations* and *Adverti
 #### Deploy Services *Payment* and *Email* from Terminal
 
 In order to open up a terminal, click on the *"icon"* at top right corner of the console, as shown in the image:
-![ocp_add](images/ocp_web_terminal_1.png)
+![ocp_add1](images/ocp_web_terminal_1.png)
 
 Then start a terminal in the window that pops up at the bottom of the page:
-![ocp_add](images/ocp_web_terminal_2.png)
+![ocp_add2](images/ocp_web_terminal_2.png)
 
 That should start a workspace pod in your project and provide you with a shell. 
 
 First, we clone the repository[kubernetes-training](https://github.com/anairo98/kubernetes-training.git):
 
-![ocp_add](images/ocp_web_terminal_3.png)
+![ocp_add3](images/ocp_web_terminal_3.png)
 
 Go to the *"kubernetes-training/e-commerce"* directory and run below commands:
 
