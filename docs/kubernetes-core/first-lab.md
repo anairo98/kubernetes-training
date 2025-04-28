@@ -34,24 +34,24 @@ Instruction to install **Podman** or **Docker** and **Minikube** on different op
 
 [minikube start](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download)
 
---->>> ***Set Alias*** <<<---
 
-Do not forget to set the alias for the ***minikube kubectl*** command in the **~/.bashrc** as:
+!!! note
+
+    Do not forget to set the alias for the ***minikube kubectl*** command in the **~/.bashrc** as:
 
 ```bash
 alias kubectl="minikube kubectl --"
 ```
 
-Otherwise, you should type the whole *"minikube kubectl"* every time you want to see resources on minikube.
+> Otherwise, you always need to type the whole *"minikube kubectl"* command!
 
---->>> ***Set Alias*** <<<---
 
 ### Steps
 Go to the corresponding directory start building and deploying the images with *podman* or *docker*.
 
-**First** --> *"static_joke_webpage"* 
+**First**: *"static_joke_webpage"* 
 
-**Second** --> *"image_accept_webpage"*
+**Second**: *"image_accept_webpage"*
 
 For each of the above application, go thorough these steps:
 
@@ -69,7 +69,7 @@ podman build -t <YOURNAME_image-name>:<YOURNMAE> .
 docker build -f ./Containerfile -t <YOURNAME_image-name>:<YOURNAME> .
 ```
 
-Replace `<YOURNAME_image-name>` and `<tag>` with your desired image name and tag.
+Replace `<YOURNAME_image-name>` and `<tag>` with your desired image name and tag. In the case of the *Kubernetes Basic Training* we would recommend to `<tag>` your image with your first name to prevent a mess :wink:
 
 > Validate if the image was build up:
 
@@ -86,10 +86,11 @@ docker images
 To test the image locally, use:
 
 ```bash
-podman run -d -p 8080:8080 <YOURNAME_image-name>:<tag>
+podman run -d -p 8080:8080 <YOURNAME_image-name>:<YOURNAME>
 
 # If you use docker instead:
-docker run -d -p 8080:8080 <YOURNAME_image-name>:<tag>
+
+docker run -d -p 8080:8080 <YOURNAME_image-name>:<YOURNAME>
 ```
 
 This maps port 8080 (first port number) on your host to port 8080 (second port number) in the container. You can set an arbitrary port for the host, but container port **MUST** be 8080.
@@ -122,11 +123,12 @@ docker login <registry-url> -u <username>
 
 ```bash
 # Push image to Docker Hub into an separate repository, just for the newly build image:
-podman push <YOURNAME_image-name>:<tag> <registry-url>/<REGISTRY-USERNAME>/<YOURNAME_image-name>:<tag>
+
+podman push <YOURNAME_image-name>:<tag> <registry-url>/<REGISTRY-USERNAME>/<YOURNAME_image-name>:<YOURNAME>
 
 # If you use docker instead and want to push image to Docker Hub into an separate repository, just for the newly build image:
 
-docker push <registry-url>/<REGISTRY-USERNAME>/<YOURNAME_image-name>:<tag>
+docker push <registry-url>/<REGISTRY-USERNAME>/<YOURNAME_image-name>:<YOURNAME>
 
 # If you use docker instead and want to push the image into an existing Repository in your Docker Hub:
 

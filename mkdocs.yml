@@ -4,6 +4,9 @@ site_url: https://trainings.com
 theme:
   name: material
   favicon: assets/images/Kubernetes_logo.png
+  icon: 
+      admonition:
+        note: octicons/tag-16
   features:
     - content.code.copy
   font:
@@ -49,6 +52,9 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
 
 

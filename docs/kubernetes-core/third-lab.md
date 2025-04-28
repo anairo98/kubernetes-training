@@ -1,10 +1,13 @@
 ## Hands-On Labs
 
 In this Hands-On-Labs, we deploy an *e-commerce application*, which is based on the [Online Boutique](https://github.com/GoogleCloudPlatform/microservices-demo), provided by [Google Cloud Platform](https://github.com/GoogleCloudPlatform). 
-The deployment manifests are modified so that they could be deployed on an OpenShift Cluster. The User Interface of **"Online Boutique"** looks like this image:
+
+The deployment manifests are modified so that they could be deployed on an OpenShift Cluster. The User Interface of **"Online Boutique"** looks like this:
+
 ![Online Boutique Interface](images/boutique_interface.png)
 
 ### Architecture
+
 On the main page of the Online Boutique, a frontend service forwards the requests to the 10 corresponding backend services, as shown in this architectur image: 
 
 ![Architecture of microservices](images/architecture-diagram.png)
@@ -33,7 +36,11 @@ These 11 microservices are written in different programming languages and are re
 
 ### Prerequisites
 
-Ensure that you have access to a **OpenShift Cluster** to deploy the manifests for the e-commerce application. If you do not already have access to a Demo Cluster, ask your training instructor!
+Ensure that you have access to a **OpenShift Cluster** to deploy the manifests for the e-commerce application. 
+
+!!! note
+
+    If you do not already have access to a Demo Cluster, ask your training instructor! Or create a Demo Cluster by yourself via the following link: [Red Hat Demo Cluster](https://catalog.partner.demo.redhat.com/catalog)
 
 
 ### Tutorial Instructions

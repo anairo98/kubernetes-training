@@ -9,7 +9,7 @@
 2. Load the image into Minikube and make sure that is correctly loaded:
 
     ```bash
-    minikube image load <YOURNAME_image-name>:<tag>
+    minikube image load <REGISTRY-USERNAME>/<YOURNAME_image-name>:<YOURNAME>
 
     minikube ssh -- docker images
     ```
@@ -28,7 +28,7 @@
         kubectl expose pod <pod-name> --type=ClusterIP --port=8080 --name <service-name>
         ```
 
-        and then use minikube native load balancer to open a tunnel to the serice:
+        and then use minikube native load balancer to open a tunnel to the service:
 
         ```bash
         minikube service <service-name>
@@ -52,7 +52,7 @@
         kubectl get service
         ```
 
-        as shown in this image, look for a port number that starts with ***30...***:
+        as shown in this image, look for a port number that looks something like this ***3XXXX***. Kubernetes is assigning NodePorts in range of 30000 and 32767:
 
         ![nodeport](images/nodeport.png)
         
